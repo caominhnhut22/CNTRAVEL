@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VN GO Travel - Vietnam tours - Travel</title>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="allTour.css">
 <script src="angular.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -15,9 +16,6 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
 </head>
-<style>
-    
-</style>
 <body ng-app="myApp">
 <header>
     <div style="display:flex;" class="logo">
@@ -30,7 +28,7 @@
         <table>
             <tr>
                 <td></td>
-                <td class="hover"><a class="menu" href="./home.html" onclick="home('')">home <i class="fa-solid fa-house"></i></a></td>
+                <td class="hover"><a class="menu" href="./index.html" onclick="home('')">home <i class="fa-solid fa-house"></i></a></td>
                 <td class="menu hover">
                 <a href="./product.html" onclick="home('')">Travels <i class='fas fa-plane'></i></a>
                     <ul class="sub-menu">
@@ -39,9 +37,9 @@
                         <li><a class="location" href="#" onclick="home('North')">Northerm</a></li>
                     </ul>
                 </td>
-                <td class="hover"><a href="./homecopyaboutus.html">ABOUT US <i class="fa fa-address-book"></i></a></td>
-                <td class="hover"><a href="./homecopycontactus.html">CONTACT US <i class="fa fa-phone"></i></a></td>
-                <td class="hover"><a href="./homecopyblog.html">BLOG <i class="fas fa-blog"></i></a></td>
+                <td class="hover"><a href="./aboutus.html">ABOUT US <i class="fa fa-address-book"></i></a></td>
+                <td class="hover"><a href="./contactus.html">CONTACT US <i class="fa fa-phone"></i></a></td>
+                <td class="hover"><a href="./blog.html">BLOG <i class="fas fa-blog"></i></a></td>
                 <td></td>
             </tr>
         </table>
@@ -53,15 +51,6 @@
         </div> 
     </div>
 </div>
-    
-    <!-- <div class="content">
-        <div class="container mt-4 d-flex mb-5">
-            <div class="view row" ng-view ng-controller="myController-News">
-
-            </div> 
-        </div>
-    </div> -->
-
     <script>
         var gScope;
         var gMyData;
@@ -69,7 +58,7 @@
         app.config(function ($routeProvider){
             $routeProvider
                 .when("/", {templateUrl: "template-product.html"})
-                .when("/details", {templateUrl: "template-details.html"})
+                .when("/details", {templateUrl: "template-details2.html"})
         });
 
         app.controller("myController-Products", function($scope, $http){
@@ -78,7 +67,6 @@
                 gMyData = response.data.products;
                 $scope.myData = response.data.products;
                 //$scope.course = {};
-
                 $scope.details = function(id){
                     debugger
                     for(i in $scope.myData){
@@ -118,7 +106,7 @@
 <div class="footer">
     <div class="container">
         <div class="logo-footer">
-            <img src="images/logo-footer.jpg">
+            <img src="./images/logofooter.png">
         </div>
         <div class="row">
             <div class="col-4">
@@ -143,7 +131,7 @@
         </div>
     </div>
     <div class="copyright">
-        <b>&#169 Copyright 2022 VietGo - Specializing in organizing high quality tours - Full version. Powered by sata365.com</b>
+        <b>Copyright 2022 &#169 VietGo - Specializing in organizing high quality tours - Full version. Powered by sata365.com</b>
     </div>
 </div>
 </body>

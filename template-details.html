@@ -1,6 +1,3 @@
-<style>
-    
-</style>
 </head>
 <body>
     <div class="col-md-12 mt-5">
@@ -10,12 +7,12 @@
             </div>
             <div class="row">
                 <div class="col-6">
-                    <img src="{{ product.imgUrl }}" class="card-img-top w-100">
+                    <img src="{{ product.imgUrl }}" class="card-img-top w-100" style="margin-left: 30px;">
                 </div>
                 <div class="book-details">
-                    <div class="input" style="font-size: 12px; border: 1px solid; width: 444px; border-radius: 20px; margin-left: 20px;">
+                    <div class="input" style="font-size: 12px; border: 1px solid; width: 444px; border-radius: 20px; margin-left: 70px;">
                     <form style="margin: 15px;" onsubmit="return false">
-                        <p style="color: firebrick;">Enter your travel registration information</p>
+                        <p style="color: firebrick;">Enter your registration information</p>
 
                         <label for="">Full name:</label><br>
                         <input class="information" type="text" id="my-Namedetails" placeholder="Enter your first and last name" style="width: 400px;"><br>
@@ -46,11 +43,11 @@
     
 
             <div class="card-body">
-                <div class="d-flex justify-content-between">
+                <div class="d-flex justify-content-between" style="margin-left: 17px;">
                     <div class="col-6">
                         <p class="card-text mr-4 text-success">
-                            <p class="card-title card-days"><b>Number of days to go:</b> {{ product.time }}</p>
-                            <p class="card-title card-price">{{ product.price }}</p>
+                            <p class="card-days"><b>Number of days to go:</b> {{ product.time }}</p>
+                            <p class="card-price">Price: {{ product.price }}</p>
                             <p id="note">(The above price includes all costs of the tour)</p>
                             <a href="img/download.jpg" download="{{ product.downloadprice }}">
                                 <button class="btn-detailsword" aria-readonly="true">Price list for the tour is available, click to download:</button>
@@ -65,10 +62,10 @@
                     </div>
             
                 </div>
-                <hr>
+                <hr class="stylehr">
                 <div>
                     <p class="card-text card-subDes" style="font-family: Arial, Helvetica, sans-serif;">{{ product.subDescription }}</p>
-                    <p class="card-text">{{ product.description }}</p>
+                    <p class="card-text" style="padding: 35px; font-size: medium;">{{ product.description }}</p>
                 </div>
             </div>
         </div> 

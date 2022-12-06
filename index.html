@@ -15,6 +15,20 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
 </head>
+<style>
+.carousel-indicators li{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 1px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: #000;
+    background-color: rgba(0,0,0,0);
+    border: 1px solid #fff;
+    border-radius: 10px;
+}
+</style>
 <body ng-app="myApp">
     <header>
         <div style="display:flex;" class="logo">
@@ -27,13 +41,13 @@
             <table>
                 <tr>
                     <td></td>
-                    <td class="hover"><a class="menu" href="./home.html" onclick="home('')">home <i class="fa-solid fa-house"></i></a></td>
+                    <td class="hover"><a class="menu" href="./index.html" onclick="home('')">home <i class="fa-solid fa-house"></i></a></td>
                     <td class="menu hover">
                     <a href="./product.html" onclick="product.html('product.html')">Travels <i class='fas fa-plane'></i></a>
                     </td>
-                    <td class="hover"><a href="./homecopyaboutus.html">ABOUT US <i class="fa fa-address-book"></i></a></td>
-                    <td class="hover"><a href="./homecopycontactus.html">CONTACT US <i class="fa fa-phone"></i></a></td>
-                    <td class="hover"><a href="./homecopyblog.html">BLOG <i class="fas fa-blog"></i></a></td>
+                    <td class="hover"><a href="./aboutus.html">ABOUT US <i class="fa fa-address-book"></i></a></td>
+                    <td class="hover"><a href="./contactus.html">CONTACT US <i class="fa fa-phone"></i></a></td>
+                    <td class="hover"><a href="./blog.html">BLOG <i class="fas fa-blog"></i></a></td>
                     <td></td>
                 </tr>
             </table>
@@ -42,39 +56,38 @@
         <table>
             <tr>
             <td>
-                <img class="banner" src="./images/banner-left.jpg" alt="">
-        
+                <img class="banner" src="./images/banner-left.jpg">
             </td>
             <td style="width: 71%;">
                 <div class="container" style=" margin-left:0; margin-right:0; width:100%;"> 
-                <div id="myCarousel" class="carousel slide" data-ride="carousel"style="width:100%;">
-                    <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                    <li data-target="#myCarousel" data-slide-to="3"></li>
-                    </ol>
-                    <div class="carousel-inner" id="divv">
-                    <div class="item active">
-                        <img src="./images/travel-vietnam-1.jpg"style="width:100%;">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel"style="width:100%;">
+                        <ol class="carousel-indicators" style="width: 70%;">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                            <li data-target="#myCarousel" data-slide-to="3"></li>
+                        </ol>
+                        <div class="carousel-inner" id="divv">
+                        <div class="item active">
+                            <img src="./images/travel-vietnam-1.jpg"style="width:100%;">
+                        </div>
+                        <div class="item">
+                            <img src="./images/vietnam-trip-1.jpg"style="width:100%;">
+                        </div>
+                        <div class="item">
+                            <img src="./images/travel-vietnam.jpg"style="width:100%;">
+                        </div>
+                        <div class="item">
+                            <img src="./images/travel-24.JPEG"style="width:100%;">
+                        </div>
+                        <a class="left carousel-control" href="#myCarousel" data-slide="prev" id="prev">
+                            <span id="next1" class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" data-slide="next" id="next">
+                            <span id="next2" class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+                        </div>
                     </div>
-                    <div class="item">
-                        <img src="./images/vietnam-trip-1.jpg"style="width:100%;">
-                    </div>
-                    <div class="item">
-                        <img src="./images/travel-vietnam.jpg"style="width:100%;">
-                    </div>
-                    <div class="item">
-                        <img src="./images/travel-24.JPEG"style="width:100%;">
-                    </div>
-                    <a class="left carousel-control" href="#myCarousel" data-slide="prev" id="prev">
-                        <span id="next1" class="glyphicon glyphicon-chevron-left"></span>
-                    </a>
-                    <a class="right carousel-control" href="#myCarousel" data-slide="next" id="next">
-                        <span id="next2" class="glyphicon glyphicon-chevron-right"></span>
-                    </a>
-                    </div>
-                </div>
                 </div>
             </td>
             <td>
@@ -84,7 +97,7 @@
         </table>
         </div>
         <div class="flicker"><p>Welcome to vn go travel</p></div>
-        <img src="img/nhathoducba-hochiminh.jpg" class="img-home">
+        <img src="./images/bannermainauto.jpg" class="img-home">
     <div class="content">
         <div class="container mt-4 d-flex mb-5">
             <div class="view row" ng-view ng-controller="myController-Products">
@@ -134,7 +147,7 @@
     <div class="footer">
         <div class="container">
             <div class="logo-footer">
-                <img src="images/logo-footer.jpg">
+                <img src="./images/logofooter.png">
             </div>
             <div class="row">
                 <div class="col-4">
@@ -159,7 +172,7 @@
             </div>
         </div>
         <div class="copyright">
-            <b>&#169 Copyright 2022 VietGo - Specializing in organizing high quality tours - Full version. Powered by sata365.com</b>
+            <b>Copyright 2022 &#169 VietGo - Specializing in organizing high quality tours - Full version. Powered by sata365.com</b>
         </div>
     </div>
 </body>

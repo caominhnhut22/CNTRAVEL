@@ -39,7 +39,7 @@ body{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .content{
-    background-color: #ffafde;
+    background-color: rgb(255, 221, 221);
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin-top: -20px;
     padding-bottom: 20px;
@@ -104,9 +104,9 @@ body{
     font-size: 20px;
 }
 @keyframes flicker{
-    0%{color: white; text-shadow: 1px 1px 10px white;}
-    50%{color: yellow;text-shadow: 1px 1px 10px yellow;}
-    100%{color: white;text-shadow: 1px 1px 10px white;}
+    0%{color: wheat; text-shadow: 1px 1px 10px wheat;}
+    50%{color: brown;text-shadow: 1px 1px 10px brown;}
+    100%{color: wheat;text-shadow: 1px 1px 10px wheat;}
 }
 .flicker{
     animation: flicker 0.5s infinite;
@@ -230,7 +230,7 @@ header .logo #tel{
 .footer{
     font-size: medium;
     margin-top: -20px;
-    background-color: orangered;
+    background-color: brown;
     color: white;
 }
 .footer .logo-footer img{
@@ -244,19 +244,7 @@ header .logo #tel{
     background: sandybrown;
     color: #000;
 }
-.zoom {
-    padding: 10px;
-    transition: .1s;
-    width: auto;
-    height: auto;
-    margin: 0 auto;
-}
 
-.zoom:hover {
-    -ms-transform: scale(1.1); /* IE 9 */
-    -webkit-transform: scale(1.1); /* Safari 3-8 */
-    transform: scale(1.1); 
-}
 *{
     margin: 0;
     padding: 0;
@@ -312,20 +300,61 @@ body{
 }
 
 /* Responsive columns */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 600px){
     .column {
     width: 100%;
     display: block;
     margin-bottom: 20px;
     }
 }
-
-/* Style the counter cards */
 .card{
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    padding: 16px;
-    background-color: #feffaf !important;
+    border-radius: 20px;
+}
+.card:hover{
+    transform: scale(1.05);
+    box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
+}
+.card::before, .card::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: scale3d(0, 0, 1);
+    transition: transform .3s ease-out 0s;
+    background: rgba(255, 255, 255, 0.1);
+    content: '';
+    pointer-events: none;
+}
+.card::before {
+    transform-origin: left top;
+}
+.card::after {
+    transform-origin: right bottom;
+}
+.card:hover::before, .card:hover::after, .card:focus::before, .card:focus::after {
+    transform: scale3d(1, 1, 1);
+}
+/* Style the counter cards */
+.col-md-4 .card{
+    background-color: #f5f7b7;
+}
+.card-title{
+    margin-top: 10px;
+    text-align: center;
+    color: crimson;
+    font-weight: 800;
+}
+.card-days{
+    text-align: left;
+}
+.card-link{
+    color: #000;
+}
+.justify-content-between{
+    font-size: medium;
+    color: blue !important;
+    font-weight: 600;
 }
 img .w-100{
     width: 90% !important;
@@ -333,14 +362,115 @@ img .w-100{
 div .button-pruduct-card .button-card a{
     text-align: center;
 }
-.button-card{
-    background-color: red;
-
+.button-card {
+    border-radius: 10px !important;
+    display: inline-block;
+    margin: 15px 15px 0;
+    padding: .6em 1.1em;
+    font-size: 26px;
+    font-size: 1.625rem;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #fe4365;
+    border-radius: 3px;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    -webkit-box-shadow: 0 0 0 -2px #cff09e, 0 0 0 -1px #fe4365;
+    box-shadow: 0 0 0 -2px #cff09e, 0 0 0 -1px #fe4365;
+    border: none;
+    -webkit-transition: -webkit-box-shadow .3s;
+    transition: box-shadow .3s;
 }
-.button-card a{
-    padding-left: 20px;
-    padding-right: 20px;
-    color: white;
+.button-card:hover, .button-card:focus {
+    -webkit-box-shadow: 0 0 0 2px #cff09e, 0 0 0 4px #ff0364;
+    box-shadow: 0 0 0 2px #cff09e, 0 0 0 4px #ff0364;
+    -webkit-transition-timing-function: cubic-bezier(0.6, 4, 0.3, 0.8);
+    transition-timing-function: cubic-bezier(0.6, 4, 0.3, 0.8);
+    -webkit-animation: gelatine 0.5s 1;
+    animation: gelatine 0.5s 1;
+}
+@keyframes gelatine {
+    from, to {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+    }
+
+    25% {
+    -webkit-transform: scale(0.9, 1.1);
+    transform: scale(0.9, 1.1);
+    }
+
+    50% {
+    -webkit-transform: scale(1.1, 0.9);
+    transform: scale(1.1, 0.9);
+    }
+
+    75% {
+    -webkit-transform: scale(0.95, 1.05);
+    transform: scale(0.95, 1.05);
+    }
+
+    from, to {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+    }
+
+    25% {
+    -webkit-transform: scale(0.9, 1.1);
+    transform: scale(0.9, 1.1);
+    }
+
+    50% {
+    -webkit-transform: scale(1.1, 0.9);
+    transform: scale(1.1, 0.9);
+    }
+
+    75% {
+    -webkit-transform: scale(0.95, 1.05);
+    transform: scale(0.95, 1.05);
+    }
+}
+@-webkit-keyframes gelatine {
+    from, to {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+    }
+
+    25% {
+    -webkit-transform: scale(0.9, 1.1);
+    transform: scale(0.9, 1.1);
+    }
+
+    50% {
+    -webkit-transform: scale(1.1, 0.9);
+    transform: scale(1.1, 0.9);
+    }
+
+    75% {
+    -webkit-transform: scale(0.95, 1.05);
+    transform: scale(0.95, 1.05);
+    }
+
+    from, to {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+    }
+
+    25% {
+    -webkit-transform: scale(0.9, 1.1);
+    transform: scale(0.9, 1.1);
+    }
+
+    50% {
+    -webkit-transform: scale(1.1, 0.9);
+    transform: scale(1.1, 0.9);
+    }
+
+    75% {
+    -webkit-transform: scale(0.95, 1.05);
+    transform: scale(0.95, 1.05);
+    }
 }
 .checked{
     color: orange;
@@ -382,12 +512,12 @@ div .button-pruduct-card .button-card a{
 }
 .contactus-title p{
     text-align: center;
-    font-size: small;
-    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    font-size: 20px;
+    font-family: cursive;
     color: darkred;
 }
 .content-contactus{
-    margin-top: 40px;
+    margin-top: 21px;
 }
 .content-contactus-main{
     background-color: wheat;
@@ -403,7 +533,7 @@ div .button-pruduct-card .button-card a{
 }
 .footer-contactus{
     font-size: medium;
-    background-color: orangered;
+    background-color: brown;
     color: white;
 }
 .footer-contactus .logo-footer img{
@@ -441,6 +571,9 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     appearance: none;
     margin: 0;
+}
+.details-content{
+    margin: 100px;
 }
 .title-details{
     text-align: center;
@@ -481,6 +614,21 @@ input::-webkit-inner-spin-button {
 	margin: 0;
 }
 .btn-details:hover{transform: translateY(-4px);}
+.flicker{
+    background-color: rgb(255, 221, 221);
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.flicker-aboutus p{
+    background-color:  rgb(255, 221, 221);
+    font-size: 20px;
+    font-family: cursive;
+}
 /* *, *:before, *:after{
     margin: 0;
     padding: 0;

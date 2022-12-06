@@ -1,0 +1,44 @@
+<div class="details">
+    <h2 id="location">{{ product.title }}</h2>
+    <div>
+        <div id="picture">
+            <img src="{{ product.imgUrl }}">
+        </div>
+        <div class="input">
+        <form onsubmit="notification()"x>
+            <p>Enter tour registration information</p>
+            <label for="">Full name:</label><br>
+            <input class="information" type="text" placeholder="Enter your first and last name"><br>
+            <label>Sex:</label><br>
+            <input name="sex" type="radio">Male
+            <input name="sex" type="radio">Female <br>
+            <label for="">Phone number:</label><br>
+            <input class="information" type="tel" placeholder="Enter your phone number"><br>
+            <label for="">Email:</label><br>
+            <input class="information" type="email" placeholder="Enter your email"><br>
+            <label for="">Address:</label><br>
+            <input class="information" type="text" placeholder="Enter your address"><br>
+            <input id="send"  type="submit" value="Send information">
+        </form>
+    </div>
+    </div>
+    <div class="vertical">
+        <p>Number of days to go: <span> {{ product.time }}</span></p>
+        <!-- <p>Your pick up point is at: <select oninput="price()" name="" id="a">
+            <option disabled selected>Please select your pick up area</option>
+            <option value="15">Northern provinces</option>
+            <option value="0">Provinces in the central region</option>
+            <option value="15">Southern provinces</option>
+        </select></p> -->
+        <p>Price: <span id="price">{{ product.price }}</span></p>
+        <p id="note">(The above price includes all costs of the tour)</p>
+        <p class="download">Price list for the tour is available, click to download: <a href="" download="{{ product.downloadprice }}">download</a></p>
+        <p class="download">Detailed itinerary of the tour, click to download: <a href="" download="{{ product.downloadifm }}">download</a></p>
+    </div>
+    <hr style="height:1px; background-color: black;">
+    <div id="sapaInformation">
+        <p>
+            {{ product.description }}
+        </p>
+      </div>
+    </div>
